@@ -30,11 +30,23 @@ One powerful tool in a retailer's arsenal for deciphering customer preferences a
 
 In this project, we embark on a journey of exploration and discovery as we delve into a rich dataset containing grocery store transactions. Our objective is clear: to glean actionable insights that will not only shed light on the intricacies of consumer behavior but also serve as the guiding beacon for strategic decision-making within the retail domain. Through rigorous analysis and interpretation of transaction data, we seek to unlock hidden patterns, identify emerging trends, and uncover correlations that hold the key to unlocking the full potential of the grocery store business.
 
-## Analysis
+# Analysis
 
 The primary objective of this project is to conduct exploratory analysis of grocery store transactions to identify patterns, trends, and associations among purchased items. By analyzing transaction data, we seek to gain insights into customer behavior, preferences, and purchasing habits. These insights can then be used to inform various business decisions, such as targeted marketing campaigns, product recommendations, and inventory management strategies.
 
-# Reading libraries
+## CRISP-DM metodology
+
+The Cross-Industry Standard Process for Data Mining (CRISP-DM) offers a systematic framework for conducting data mining projects. It encompasses six distinct stages: comprehending the business context, understanding the data, preparing the data, developing models, evaluating these models, and implementing them.
+
+### Business understanding
+
+The goal of this analysis is to identify trends based on collected data about customer transactions. This can lead to important insights that can be used for marketing efforts, product placement and layout optimization, product recommendations, and inventory management. Overall, market basket analysis can provide businesses with valuable insights into customer preferences and behavior, which they can use to make informed decisions and improve their business results.
+
+### Data Understanding
+
+Upon initial inspection, we have performed a thorough check for missing values in the dataset, and we can confirm that there are none present. This ensures that the dataset is complete and ready for further analysis. Furhter more to understand the trend we will investigate the top 10 most purchased items and their frequency.
+
+#### Reading libraries
 
 ```{r}
 #|output: false
@@ -52,7 +64,7 @@ pacman::p_load("tidyverse", "magrittr", "nycflights13", "gapminder",
 
 ```
 
-## Importing data
+#### Importing data
 
 The dataset is provided and loaded in basketformat.
 
@@ -79,16 +91,6 @@ datatable(as(g, "data.frame"))
 
 ```
 
-## CRISP-DM metodology
-
-The Cross-Industry Standard Process for Data Mining (CRISP-DM) offers a systematic framework for conducting data mining projects. It encompasses six distinct stages: comprehending the business context, understanding the data, preparing the data, developing models, evaluating these models, and implementing them.
-
-### Business understanding
-
-The goal of this analysis is to identify trends based on collected data about customer transactions. This can lead to important insights that can be used for marketing efforts, product placement and layout optimization, product recommendations, and inventory management. Overall, market basket analysis can provide businesses with valuable insights into customer preferences and behavior, which they can use to make informed decisions and improve their business results.
-
-### Data Understanding
-
 Upon initial inspection, we have performed a thorough check for missing values in the dataset, and we can confirm that there are none present. This ensures that the dataset is complete and ready for further analysis. Furhter more to understand the trend we will investigate the top 10 most purchased items and their frequency.
 
 ```{r}
@@ -114,7 +116,7 @@ itemFrequencyPlot(g, topN=10, type="relative", horiz=TRUE)
 
 After importing the data, it has been expected and is ready for analysis
 
-### Modeling
+### Modelling
 
 #### Exploratory analysis
 
